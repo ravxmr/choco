@@ -1,0 +1,39 @@
+VERIFICATION
+============
+
+Verifying the authenticity of the Feather Wallet installer.
+
+1. Download the installer from the official GitHub releases page:
+   https://github.com/feather-wallet/feather/releases
+
+2. Verify the SHA-256 checksum of the downloaded file matches the value
+   embedded in chocolateyinstall.ps1:
+
+   (Get-FileHash -Algorithm SHA256 -Path feather-2.7.0-windows-installer.exe).Hash
+
+3. For strong verification, Feather Wallet releases are signed by the
+   lead developer:
+   a) Verify the GPG signature on the SHA256SUMS file published alongside
+      each release (e.g., SHA256SUMS.asc).
+   b) Verify the Windows binary's Authenticode signature:
+      Right-click the .exe -> Properties -> Digital Signatures
+
+4. The GPG public key for the Feather Wallet maintainer can be found at:
+   https://github.com/feather-wallet/feather/releases
+
+WINDOWS DEFENDER EXCLUSIONS
+===========================
+
+This package adds the following Windows Defender exclusions during install:
+
+  - Path:   %TEMP%\chocolatey       (removed after install completes)
+  - Path:   C:\Program Files\Feather Wallet  (persisted, removed on uninstall)
+  - Process: feather.exe             (persisted, removed on uninstall)
+
+These are necessary because Windows Defender frequently flags Monero
+wallet binaries as malicious (false positive). The exclusions are
+automatically cleaned up when the package is uninstalled.
+
+You can verify the current exclusions at any time with:
+
+  Get-MpPreference | Select-Object -Property Exclusion*

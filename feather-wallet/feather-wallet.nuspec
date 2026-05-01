@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>feather-wallet</id>
+    <version>2.8.1</version>
+    <packageSourceUrl>https://github.com/ravxmr/choco/feather-wallet</packageSourceUrl>
+    <owners>RavFX_XMR</owners>
+    <title>Feather Wallet</title>
+    <authors>Feather Wallet Contributors</authors>
+    <projectUrl>https://featherwallet.org</projectUrl>
+    <projectSourceUrl>https://github.com/feather-wallet/feather</projectSourceUrl>
+    <iconUrl>https://raw.githubusercontent.com/feather-wallet/feather/master/src/assets/images/appicons/256x256.png</iconUrl>
+    <licenseUrl>https://github.com/feather-wallet/feather/blob/master/LICENSE</licenseUrl>
+    <docsUrl>https://docs.featherwallet.org</docsUrl>
+    <bugTrackerUrl>https://github.com/feather-wallet/feather/issues</bugTrackerUrl>
+    <tags>feather-wallet monero xmr crypto cryptocurrency wallet</tags>
+    <summary>A free, open-source Monero wallet for desktop.</summary>
+    <description><![CDATA[
+Feather Wallet is a free, open-source Monero (XMR) wallet for Windows, macOS, and Linux.
+
+## Features
+- **Fast & Lightweight** — Starts up in seconds and uses minimal resources
+- **Private by Default** — Built-in Tor support, automatically connects to remote nodes
+- **Easy to Use** — Clean, intuitive interface designed for everyday use
+- **Full Monero Feature Support** — Subaddresses, accounts, coin control, and more
+- **Open Source** — Fully auditable code under the BSD-3-Clause license
+
+## Important: Windows Defender Exclusions
+Monero wallets are frequently targeted by antivirus false positives.
+This package **automatically** adds Windows Defender exclusions for:
+- The Feather Wallet install directory
+- The `feather.exe` process
+- The Chocolatey download cache (during install only)
+
+These exclusions are **removed automatically** when you uninstall the package.
+]]></description>
+    <releaseNotes>https://github.com/feather-wallet/feather/releases/tag/2.8.1</releaseNotes>
+    <dependencies>
+      <dependency id="vcredist140" version="14.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
