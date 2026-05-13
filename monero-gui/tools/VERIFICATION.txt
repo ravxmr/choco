@@ -1,0 +1,30 @@
+VERIFICATION
+============
+
+Verifying the authenticity of the Monero GUI Wallet.
+
+1. Download the installer from the official GitHub releases page:
+   https://github.com/monero-project/monero-gui/releases/tag/v0.18.5.0
+
+2. Verify the SHA-256 checksum of the downloaded file matches the value
+   embedded in chocolateyinstall.ps1:
+
+   (Get-FileHash -Algorithm SHA256 -Path monero-gui-install-win-x64-v0.18.5.0.exe).Hash
+
+WINDOWS DEFENDER EXCLUSIONS
+===========================
+
+This package adds the following Windows Defender exclusions during install:
+
+  - Path:   %TEMP%\chocolatey$chocoTempDir\monero-wallet-gui  (removed after install completes)
+  - Path:   C:\Program Files\Monero GUI Wallet                (persisted, removed on uninstall)
+  - Process: monero-wallet-gui.exe                            (persisted, removed on uninstall)
+  - Process: monerod.exe                                      (persisted, removed on uninstall)
+
+These are necessary because Windows Defender frequently flags Monero
+wallet binaries as malicious (false positive). The exclusions are
+automatically cleaned up when the package is uninstalled.
+
+You can verify the current exclusions at any time with:
+
+  Get-MpPreference | Select-Object -Property Exclusion*

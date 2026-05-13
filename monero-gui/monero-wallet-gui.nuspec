@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>monero-wallet-gui</id>
+    <version>0.18.5.0</version>
+    <packageSourceUrl>https://github.com/ravxmr/choco/tree/main/monero-gui</packageSourceUrl>
+    <owners>RavFX_XMR</owners>
+    <title>Monero GUI Wallet</title>
+    <authors>Monero Contributors</authors>
+    <projectUrl>https://getmonero.org</projectUrl>
+    <projectSourceUrl>https://github.com/monero-project/monero-gui</projectSourceUrl>
+    <iconUrl>https://raw.githubusercontent.com/monero-project/monero-gui/master/images/appicons/256x256.png</iconUrl>
+    <licenseUrl>https://github.com/monero-project/monero-gui/blob/master/LICENSE</licenseUrl>
+    <docsUrl>https://docs.getmonero.org/interacting/overview/</docsUrl>
+    <bugTrackerUrl>https://github.com/monero-project/monero-gui/issues</bugTrackerUrl>
+    <tags>monero xmr crypto cryptocurrency wallet</tags>
+    <summary>Official graphical user interface wallet for the Monero cryptocurrency.</summary>
+    <description><![CDATA[
+Monero is a private, decentralized, untraceable, and fungible cryptocurrency based on the CryptoNote protocol.
+
+monero-gui provides the official cross-platform graphical user interface (GUI) for interacting with the Monero blockchain. Built using the Qt framework, it allows users to easily manage their Monero (XMR) funds, send and receive transactions, and track balances without needing to use the command-line interface.
+
+The wallet operates in conjunction with the Monero daemon (monerod). By default, monero-gui can run a full node locally, downloading and verifying the entire blockchain to ensure maximum privacy and security by not trusting third-party servers. For users who prefer lower storage and bandwidth requirements, the GUI also provides the option to connect to a remote node.
+]]></description>
+    <releaseNotes>https://github.com/monero-project/monero-gui/releases/tag/v0.18.5.0</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
