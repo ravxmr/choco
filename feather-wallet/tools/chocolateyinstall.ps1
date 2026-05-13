@@ -24,8 +24,8 @@ Write-Host "Adding Windows Defender exclusions to prevent false-positive quarant
 # Exclude the Chocolatey temp/cache folder so the installer
 #    binary is not quarantined mid-download.
 try {
-    Add-MpPreference -ExclusionPath $chocoTempDir -ErrorAction Stop
-    Write-Host "  [OK] Excluded download cache: $chocoTempDir"
+    Add-MpPreference -ExclusionPath $chocoTempDir\feather-wallet -ErrorAction Stop
+    Write-Host "  [OK] Excluded download cache: $chocoTempDir\feather-wallet"
 }
 catch {
     Write-Warning "Could not add Defender exclusion for download cache: $_"
@@ -88,7 +88,7 @@ Install-ChocolateyPackage @packageArgs
 # ============================================================
 
 try {
-    Remove-MpPreference -ExclusionPath $chocoTempDir -ErrorAction Stop
+    Remove-MpPreference -ExclusionPath $chocoTempDir\feather-wallet -ErrorAction Stop
     Write-Host "`nRemoved Defender exclusion for download cache (no longer needed)." -ForegroundColor DarkGray
 }
 catch {

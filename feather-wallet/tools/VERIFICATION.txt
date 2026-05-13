@@ -26,9 +26,9 @@ WINDOWS DEFENDER EXCLUSIONS
 
 This package adds the following Windows Defender exclusions during install:
 
-  - Path:   %TEMP%\chocolatey       (removed after install completes)
+  - Path:   %TEMP%\chocolatey\feather-wallet (removed after install completes)
   - Path:   C:\Program Files\Feather Wallet  (persisted, removed on uninstall)
-  - Process: feather.exe             (persisted, removed on uninstall)
+  - Process: feather.exe                     (persisted, removed on uninstall)
 
 These are necessary because Windows Defender frequently flags Monero
 wallet binaries as malicious (false positive). The exclusions are
