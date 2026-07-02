@@ -59,7 +59,7 @@ catch {
 
 try {
     Remove-MpPreference -ExclusionProcess 'tor.exe' -ErrorAction Stop
-    Write-Host "  [OK] Removed process exclusion: feather.exe"
+    Write-Host "  [OK] Removed process exclusion: tor.exe"
 }
 catch {
     Write-Verbose "Process exclusion already absent or could not be removed: $_"

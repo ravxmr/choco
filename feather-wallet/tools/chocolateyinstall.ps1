@@ -56,7 +56,7 @@ catch {
 # Exclude the tor.exe process so it isn't killed at runtime.
 try {
     Add-MpPreference -ExclusionProcess 'tor.exe' -ErrorAction Stop
-    Write-Host "  [OK] Excluded process: feather.exe"
+    Write-Host "  [OK] Excluded process: tor.exe"
 }
 catch {
     Write-Warning "Could not add Defender process exclusion: $_"
